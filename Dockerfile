@@ -5,7 +5,7 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-FROM node:26-alpine
+FROM node:25-alpine
 WORKDIR /app
 COPY --from=builder /app/build build
 COPY --from=builder /app/package.json .
